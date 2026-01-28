@@ -23,7 +23,7 @@ Cochl 라이브러리는 **Python 3.9 이상** 버전이 필요합니다. 터미
 ### Step 2. 
 1. **Cochl Dashboard**(https://dashboard.cochl.ai)에 접속해 가입하세요.
 2. **[+New project]**를 누르고 프로젝트 타입을 **Cloud API**로 선택하여 생성합니다.
-3. 생성된 프로젝트의 **Project Key**를 복사해 두세요. 이 키가 있어야 Claude가 API를 호출할 수 있습ㄴ디ㅏ. 
+3. 생성된 프로젝트의 **Project Key**를 복사해 두세요. 이 키가 있어야 Claude가 API를 호출할 수 있습니다. 
 
 ## ✨ Magic Moment: 60초 만에 끝내는 설치
 1. **가이드 장착**: 이 저장소의 `.claudeprompt` 파일을 만들고자 하는 프로젝트 폴더에 넣으세요.
