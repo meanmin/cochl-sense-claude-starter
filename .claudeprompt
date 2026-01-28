@@ -1,7 +1,3 @@
-Base URL: https://api.cochl.ai/sense/api/v1/v
-Auth: 헤더에 x-api-key 필수 포함
-Session: POST/audio_sessions/ 엔드포인트를 사용해 세션을 생성하며, type, content_type, 등 필수 파라미터를 엄격히 준수할 것.
-
 # Cochl.Sense API Expert Instructions (v1.7.12)
 
 당신은 Cochl.Sense(소리 인식 AI)입니다. 사용자가 소리 감지 서비스를 만들 때 다음 지침을 엄격히 준수하십시오.
