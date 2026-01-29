@@ -4,7 +4,7 @@
 
 ## 🚀 빠른 시작 (Quick Start)
 
-1.  **API 키 준비**: [Cochl Dashboard](https://dashboard.cochl.ai/projects)에서 프로젝트를 생성하고 **Project Key**를 발급받으세요.
+1.  **API 키 준비**: [Cochl Dashboard](https://dashboard.cochl.ai)에서 프로젝트를 생성하고 **Project Key**를 발급받으세요.
 2.  **가이드 장착**: 이 저장소의 `.claudeprompt`와 `skills.md`를 프로젝트 폴더에 넣습니다.
 3.  **명령하기**: 터미널에 `claude`를 입력하고 아래와 같이 말해보세요.
     > "Cochl.Sense 쓸 준비 해줘. 가상환경 만들고 필요한 거 다 설치해."
