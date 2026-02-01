@@ -13,9 +13,14 @@ description: Cochl.Sense 소리 인식 AI를 사용하여 비언어적 소리(�
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip cochl requests
+. venv/bin/activate
+pip install --upgrade pip
+pip install --upgrade cochl
+git clone https://github.com/cochlearai/cochl-sense-py.git
+cd cochl-sense-py/samples
 ```
+
+이 과정에서 python3나 pip가 없다면 추가로 설치해주세요
 
 ## 2. API 기술 규격
 
