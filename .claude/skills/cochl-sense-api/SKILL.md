@@ -1,9 +1,12 @@
 ---
 name: cochl-sense-api
-description: Analyzes and identifies audio events (e.g., "dog barking", "glass breaking", "siren", "speech") using the Cochl.Sense Cloud API. 
-  Use when the user asks to "identify sounds", "analyze this audio", "what is this noise?", or "monitor for events". 
-  Activates on requests for "barking", "siren", "smoke alarm", or when uploading audio files like .wav, .mp3, or .ogg. 
-  Key capabilities: Automated environment setup with --no-deps workaround, secure .env key management, and parsing complex SDK 'window_results' into timestamps and confidence scores.
+description: >
+  Analyzes and identifies audio events (e.g., "dog barking", "glass breaking", "siren", "speech") 
+  using the Cochl.Sense Cloud API. Use when the user asks to "identify sounds", "analyze this 
+  audio", "what is this noise?", or "monitor for events". Activates on requests for 
+  "barking", "siren", "smoke alarm", or when uploading audio files like .wav, .mp3, or .ogg. 
+  Key capabilities include automated environment setup with --no-deps workaround, secure 
+  .env key management, and parsing complex SDK 'window_results' into timestamps and confidence scores.
 license: MIT
 metadata:
   author: Cochl
