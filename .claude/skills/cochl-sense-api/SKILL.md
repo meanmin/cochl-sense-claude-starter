@@ -1,9 +1,12 @@
 ---
 name: cochl-sense-api
 description: >
-  Identify sounds like barking, sirens, or speech using Cochl.Sense API.
-  Triggers on "analyze audio", "what is this noise?", or .wav/.mp3 uploads.
-  Handles --no-deps install, .env security, and 'window_results' parsing.
+  Identify and classify environmental sounds (barking, sirens, speech, alarms,
+  baby crying, glass breaking, etc.) using Cochl.Sense Cloud API. Use when the
+  user mentions "analyze audio", "detect sound", "what sound is this", "identify
+  noise", uploads audio files (.wav/.mp3/.ogg), or asks about sound recognition
+  and audio classification. Handles API authentication, dependency installation,
+  and result parsing.
 license: MIT
 version: 2.0.0
 author: Cochl

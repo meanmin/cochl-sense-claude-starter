@@ -1,68 +1,116 @@
-# Cochl.Sense API Integration Skill for Claude
+# Cochl.Sense Audio Detection for Claude Code
 
-A Claude Code skill that transforms Claude into a **Cochl.Sense Cloud API integration expert**, enabling rapid implementation of AI-powered audio event detection in your applications.
+Transform Claude into an audio AI expert. Instantly add sound detection, classification, and analysis capabilities to your projects—from barking dogs to breaking glass, sirens to speech.
 
-## What is This Skill?
+## What You'll Get
 
-This skill equips Claude with comprehensive knowledge and best practices for integrating the Cochl.Sense Cloud API. When activated, Claude becomes an expert assistant that can:
+With this plugin installed, Claude will automatically help you:
 
-- Guide you through secure API setup with proper key management
-- Generate production-ready code following security best practices
-- Handle Python environment configuration and dependency management
-- Troubleshoot common integration issues automatically
-- Implement audio analysis features quickly and safely
-
-## What Claude Can Do With This Skill
-
-When this skill is active, Claude can help you:
-
-- **Set Up API Access**: Guide API key acquisition from Cochl Dashboard and configure secure `.env` files
-- **Install Dependencies**: Set up Python environments and handle package installation correctly
-- **Write Secure Code**: Generate production-ready code with proper validation and error handling
-- **Parse SDK Responses**: Extract sound tags, probabilities, and timestamps correctly from API responses
-- **Implement Advanced Features**: Batch processing, custom sensitivity thresholds, and demo modes
-- **Troubleshoot Issues**: Diagnose and fix common dependency, authentication, and integration problems
+- 🎯 **Detect 500+ environmental sounds** in audio files (dog barks, sirens, alarms, baby crying, glass breaking, speech, etc.)
+- 🔒 **Set up secure API authentication** with best practices (.env files, .gitignore)
+- 🐍 **Handle Python dependencies correctly** (includes workarounds for PyPI issues)
+- 📊 **Parse API responses** and extract sound tags with confidence scores
+- 🚀 **Build production-ready applications** with proper error handling
 
 ## Installation
 
-### For Claude Code CLI
+### Step 1: Add the Marketplace
 
 ```bash
-# Navigate to your project directory
-cd cochl-sense-claude-starter
-
-# The skill is already included in .claude/skills/cochlAPI/
-# Claude will automatically detect and offer to use it when relevant
+/plugin marketplace add minseojang/cochl-sense-claude-starter
 ```
 
-### For Claude.ai
+### Step 2: Install the Plugin
 
-Upload the `.claude/skills/cochlAPI/` folder to your Claude.ai project to enable this skill.
+```bash
+/plugin install cochl-sense-api
+```
 
-## Usage
+That's it! Claude now has expert knowledge of the Cochl.Sense API.
 
-Claude will automatically activate this skill when you mention Cochl API-related tasks:
+## Quick Start
 
-- "Help me integrate the Cochl API into my Flask app"
-- "I need to add sound detection to my Python application"
-- "How do I analyze audio files with the Cochl API?"
+Once installed, simply ask Claude:
 
-All implementation details, security requirements, and troubleshooting steps are defined in `.claude/skills/cochlAPI/SKILL.md`.
+```
+"Help me detect sounds in this audio file"
+```
 
-## Demo Application
+Claude will:
+1. ✅ Check if you have a Cochl API key (and guide you to get one if needed)
+2. ✅ Set up your Python environment correctly
+3. ✅ Install dependencies with proper workarounds
+4. ✅ Write secure, production-ready code
+5. ✅ Parse results and show you detected sounds with confidence scores
 
-This repository includes a simple Flask demo app (`app.py`) that demonstrates the skill's capabilities. Ask Claude to help you run it:
+## Example Use Cases
 
-"Help me run the demo Flask application"
+### Detect sounds in an audio file
+```
+"Analyze dog-bark.wav and tell me what sounds are detected"
+```
+**Result:** Claude writes code to detect barking, shows confidence scores, and handles errors gracefully.
 
-Claude will guide you through the setup process using the knowledge from this skill.
+### Build a Flask audio analysis API
+```
+"Create a Flask endpoint that accepts audio uploads and returns detected sounds"
+```
+**Result:** Claude builds a complete API with file upload, validation, Cochl API integration, and proper error responses.
 
-## Related Links
+### Set up a batch processing pipeline
+```
+"Process all .wav files in the uploads/ directory and save results to JSON"
+```
+**Result:** Claude creates a script that processes multiple files, handles failures, and generates structured output.
 
-- [Cochl Dashboard](https://dashboard.cochl.ai) - Get your API key
-- [Cochl Official Documentation](https://docs.cochl.ai/sense/cochl.sense-cloud-api/gettingstarted/) - API reference
-- [Claude Skills Documentation](https://code.claude.com/docs/en/skills) - Learn about Claude Code skills
+## What Makes This Different
+
+- **No more API documentation hunting**: Claude knows all the details
+- **Handles PyPI quirks**: Includes `--no-deps` workarounds and dependency fixes
+- **Security by default**: Automatically sets up .env files and .gitignore
+- **SDK-specific knowledge**: Knows that Python SDK uses `window_results`, not `events`
+- **Production-ready patterns**: Error handling, validation, and demo modes included
+
+## Requirements
+
+- Python 3.9+ (Claude will check and warn if incompatible)
+- A Cochl API key from [dashboard.cochl.ai](https://dashboard.cochl.ai)
+
+## What's Included
+
+This plugin contains:
+- **cochl-sense-api skill**: Core API integration guidance
+- **Environment setup guides**: Platform-specific installation instructions
+- **Troubleshooting database**: Common errors and solutions
+- **Advanced features**: Batch processing, custom configuration, sensitivity tuning
+
+## Getting Your API Key
+
+Claude will guide you through this automatically, but here's the quick version:
+
+1. Visit [dashboard.cochl.ai](https://dashboard.cochl.ai)
+2. Sign up or log in
+3. Create a new project
+4. Copy your project key
+5. Tell Claude you have it—Claude handles the rest
+
+## Support & Documentation
+
+- **Cochl Dashboard**: [dashboard.cochl.ai](https://dashboard.cochl.ai)
+- **Official API Docs**: [docs.cochl.ai](https://docs.cochl.ai/sense/cochl.sense-cloud-api/gettingstarted/)
+- **Claude Code Skills**: [code.claude.com/docs/en/skills](https://code.claude.com/docs/en/skills)
 
 ## License
 
-This skill is provided for demonstration and educational purposes.
+MIT License - See LICENSE file for details.
+
+---
+
+**Ready to add AI-powered sound detection to your project?**
+
+```bash
+/plugin marketplace add minseojang/cochl-sense-claude-starter
+/plugin install cochl-sense-api
+```
+
+Then just ask Claude: *"Help me detect sounds in my audio files"*
