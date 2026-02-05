@@ -65,20 +65,38 @@ echo "COCHL_API_KEY=your_project_key_here" > .env.example
 **Python Version Requirement:**
 - Python 3.9+ REQUIRED
 - Python 3.8 or lower NOT SUPPORTED
+- ⚠️ **Python 3.11+ REQUIRES virtual environment** (externally-managed-environment protection)
 
-**Quick Setup:**
+**CRITICAL: Create Virtual Environment FIRST**
+
+Python 3.11+ blocks system-wide package installation. ALWAYS use virtual environment:
+
 ```bash
-# Create virtual environment
+# 1. Create virtual environment (MANDATORY for Python 3.11+)
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Install dependencies IN THIS ORDER
-pip install flask python-dotenv pydub
-pip install cochl --no-deps  # WITHOUT dependencies (PyPI workaround)
-pip install soundfile requests numpy  # Manual dependency install
+# 2. Verify activation
+which python  # Should show venv/bin/python
 ```
 
-**Why --no-deps?** The cochl package has PyPI availability issues. This workaround resolves dependency conflicts.
+**Install Dependencies IN THIS ORDER:**
+
+```bash
+# 3. Install core dependencies
+pip install flask python-dotenv pydub
+
+# 4. Install cochl WITHOUT dependencies (PyPI workaround)
+pip install cochl --no-deps
+
+# 5. Install cochl dependencies manually (INCLUDING python-dateutil)
+pip install soundfile requests numpy python-dateutil==2.0.0.post0
+```
+
+**Why this order?**
+- `--no-deps`: Cochl package has PyPI availability issues
+- `python-dateutil==2.0.0.post0`: Required by cochl but skipped by --no-deps
+- Manual installation prevents dependency conflicts
 
 For detailed platform-specific installation instructions, see [references/environment-setup.md](references/environment-setup.md)
 
@@ -163,8 +181,11 @@ for window in window_results:
 
 | Error | Cause | Solution |
 |-------|-------|----------|
-| Authentication error | Invalid API key | Verify .env file |
+| externally-managed-environment | Python 3.11+ blocks system install | Create venv: `python -m venv venv && source venv/bin/activate` |
+| ModuleNotFoundError: cochl | cochl not installed or venv not activated | Activate venv and `pip install cochl --no-deps` |
 | ModuleNotFoundError: soundfile | Missing dependency | `pip install soundfile numpy` |
+| ModuleNotFoundError: dateutil | Missing cochl dependency | `pip install python-dateutil==2.0.0.post0` |
+| Authentication error | Invalid API key | Verify .env file |
 | Unsupported format | Wrong file type | Convert to WAV/MP3/OGG |
 | File too large | Size exceeds 16MB | Compress or split file |
 
@@ -210,10 +231,11 @@ For batch processing, custom configuration, and sensitivity tuning, see [referen
 **Critical Reminders:**
 1. ✅ Always check API key first - Never proceed without it
 2. ✅ Use environment variables - Never hardcode
-3. ✅ Check Python 3.9+ - Warn on 3.8 or lower
-4. ✅ Install cochl with --no-deps - Then install dependencies manually
-5. ✅ Use `window_results` key - NOT `events` (SDK differs from REST API)
-6. ✅ Keep .env out of git - Always verify .gitignore
+3. ✅ **Create virtual environment FIRST** - MANDATORY for Python 3.11+
+4. ✅ Check Python 3.9+ - Warn on 3.8 or lower
+5. ✅ Install cochl with --no-deps - Then install dependencies manually INCLUDING python-dateutil
+6. ✅ Use `window_results` key - NOT `events` (SDK differs from REST API)
+7. ✅ Keep .env out of git - Always verify .gitignore
 
 **Important Links:**
 - Dashboard (API keys): https://dashboard.cochl.ai
